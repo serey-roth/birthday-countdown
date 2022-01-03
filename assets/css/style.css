@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Itim&display=swap");
+
+:root {
+    --textColor: black;
+    --fontSize: 18px;
+    --fontWeight: 900;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    color: var(--textColor);
+    font-family: 'Itim', sans-serif;
+    font-size: var(--fontSize);
+    font-weight: var(--fontWeight);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.countdown-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.countdown {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 5px;
+}
+
+.user-input {
+    margin: 10px 10px;
+}
+
+/*
+reference: https://stackoverflow.com/questions/8842425/how-do-i-make-jquery-ui-datepicker-show-up-in-the-center-of-my-screen
+*/
+#ui-datepicker-div{
+    position: fixed !important;
+    left: 50% !important;
+    z-index: 9999 !important;
+
+    -webkit-transform   : translateX(-50%) translateY(0%) !important;
+    -moz-transform      : translateX(-50%) translateY(0%) !important;
+    -ms-transform       : translateX(-50%) translateY(0%) !important;
+    transform           : translateX(-50%) translateY(0%) !important;
+}
+
+.current-date {
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.current-date p {
+    margin: 0;
+}
+
+.time-left {
+    margin: 0px 10px;
+    padding: 0;
+}
+
+#time-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#time-list li {
+    margin: 0 0 0 5px;
+}
+
+i {
+    visibility: collapse;
+}
+
+#seconds-left {
+    padding-right: 5px;
+} 
+
+@media only screen and (max-width: 1000px) {
+    .current-date {
+        flex-direction: column;
+        gap: 0;
+    }
+    #time-list {
+        display: block;
+    }
+    #time-list li {
+        padding-left: 10px;
+    }
+    i {
+        visibility: visible;
+        padding-right: 10px;
+    }
+}

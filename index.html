@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <!--jquery datepicker widget-->
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+            rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function() {
+            $("#my_date_picker").datepicker({
+                defaultDate: Date.now(),
+                dateFormat: 'mm-dd-yy',
+                changeMonth: true,
+                changeYear: true,
+                minDate: '0d'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="countdown-wrapper">
+        <div class="countdown"> 
+            <div class="current-date">
+                <p>Current Date:</p>
+                <p id="today">Jan 02, 2022</p>
+            </div>
+            <div class="user-input">
+                <label for="birthday">Select your birthday:</label>
+                <input type="text" id="my_date_picker">
+            </div>
+            <div class="time-left">
+                <ul id="time-list">There are
+                <li id="days-left"><i class="fa-solid fa-cake-candles"></i>0 day</li>
+                <li id="hours-left"><i class="fa-solid fa-cake-candles"></i>0 hr</li>
+                <li id="minutes-left"><i class="fa-solid fa-cake-candles"></i>0 min</li>
+                <li id="seconds-left"><i class="fa-solid fa-cake-candles"></i>0 sec</li>till your birthday.
+                </ul>
+                <p id="message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script> <!--document event listener-->
+</body>
+</html>
